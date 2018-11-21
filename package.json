@@ -1,0 +1,32 @@
+{
+  "name": "cypress-e2e-starter-kit",
+  "version": "1.0.0",
+  "description": "Starter kit to run end-to-end (E2E) tests with Cypress.io",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cypress open",
+    "e2e": "cypress run",
+    "lint": "eslint cypress/",
+    "stop-only": "stop-only --folder cypress/integration --skip node_modules",
+    "test": "npm run e2e"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run stop-only && pretty-quick --staged"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-cypress": "^2.1.2",
+    "husky": "^1.2.0",
+    "prettier": "^1.15.2",
+    "pretty-quick": "^1.8.0",
+    "stop-only": "^2.2.5"
+  }
+}
